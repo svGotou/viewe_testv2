@@ -1,9 +1,0 @@
-mkdir www
-cd www
-git init
-cd www
-mkdir viewe
-cd viewe
-git add \\vmware-host\Shared Folders\デスクトップ\viewe\ViewEupdate_20171102-蓄電ｖｅｒ\viewe\battery.html
-git commit -m “add new file”
-git status
