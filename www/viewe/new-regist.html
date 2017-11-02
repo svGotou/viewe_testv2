@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="content-style-type" content="text/css" />
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script type="text/javascript" src="common/js/code-check.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+	document.write('<meta name="viewport" content="width='+device_width+'">');
+	document.write('<link rel="stylesheet" href="common/css/'+code+'/common.css" type="text/css" charset="UTF-8" title="style">');
+	document.write('<link rel="stylesheet" href="common/css/'+code+'/new.css" type="text/css" charset="UTF-8" title="style">');
+	$(function() {
+		$('button.dateselect').click(function(){
+			$(this).prev('input').datepicker();
+			$(this).prev('input').datepicker("show");
+		});
+	});
+// ]]>
+</script>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<title>登録が完了しました | ViewE</title>
+</head>
+<body>
+<div id="wrapper">
+<!--header-->
+<div id="header">
+<div class="container">
+<a href="index.html"><img src="common/images/pc/logo.png" alt="ViewE" id="logo"></a>
+</div>
+</div>
+<!--header-->
+<!--content-->
+<div class="container">
+<div id="new">
+<div id="registed">
+登録が完了しました!
+<span>ご記入いただいたメールアドレスにご登録内容を送信したのでご確認ください。</span>
+</div>
+
+<div id="login-message">ログインしてViewEを始めましょう!</div>
+<form id="login-form" action="main.html">
+<div class="inner-login">
+<div class="input-text">ユーザーID</div>
+<input type="text" />
+<div class="input-text">パスワード</div>
+<input type="text" />
+<button type="submit" id="login-submit">ログイン</button>
+<div class="center">
+<a href="password.html">パスワードを忘れた方はこちら</a>
+</div>
+</div>
+</form>
+</div>
+</div>
+<!--content-->
+</div>
+</body>
+</html>

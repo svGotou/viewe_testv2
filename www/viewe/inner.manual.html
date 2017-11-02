@@ -1,0 +1,433 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ViewE操作マニュアル</title>
+<link href="manual_responsive.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<div class="index">
+
+<h1>目次</h1>
+<ul>
+<li>
+	<a href="#06"><strong>初期設定について(ViewE本体)</strong></a><br />
+   　<a href="#08">・追加回路選択</a><br />
+   　<a href="#09">・分電盤の回路数選択</a><br />
+   　<a href="#10">・回路の名称設定</a></li>
+<li>
+   　<a href="#11"><strong>初期設定について(消費電力目標値)</strong></a><br />
+   　<a href="#12">・ 1日あたりの目標消費電力(kWh)</a><br />
+   　<a href="#13">・ 1kWhあたりの電気料金(円)</a><br />
+   　<a href="#14">・ 時間帯入力</a></li>
+</li>
+<li>
+	<a href="#01"><strong>各画面について</strong></a><br />
+   　 <a href="#02">・メイン</a><br />
+   　 <a href="#03">・消費電力</a><br />
+   　 <a href="#04">・構成</a><br />
+   　 <a href="#05">・太陽光発電</a></li>
+<li>
+    <a href="#15"><strong>消費電力の集計データのダウンロード方法</strong></a><br />
+   　<a href="#16">・ 年間の消費電力集計データ</a><br />
+   　<a href="#17">・ 月間の消費電力集計データ</a><br />
+   　<a href="#18">・ 1日あたりの消費電力集計データ</a></li>
+<li>
+    <a href="#L00"><strong>外出モードでViewEを起動する</strong></a><br />
+   　 <a href="#L01">・viewe.jpのログイン方法</a><br />
+   　 <a href="#L02">・ユーザーIDまたはパスワードをお忘れの場合（登録内容の変更）</a></li>
+</ul>
+
+
+
+
+<h1 id="06">初期設定について(ViewE本体)</h1>
+	<div class="wrapper">
+	<div class="content">
+	<p>在宅ネットワークでViewEを起動します。(現在開いている画面です）<br>
+	在宅ネットワークのViewEで<a href="setting.html" target="_blank">設定ページ</a>を開き、サブメニューから「ViewE本体」を選び各種設定を行います。</p>
+	<p><font color="#fb2a2a">※初期設定の手順を省きますと正しいデータが取得できない場合がございます。初期設定の手順は必ず行うようにしてください。</font></p>
+	</div><!-- div class="content" -->
+	</div><!-- div class="wrapper" -->
+
+	<div class="setting">
+	</div><!-- div class="images" -->
+
+
+<h2 id="08">追加回路選択</h2>
+    <div class="wrapper">
+	<div class="content">
+	<p>エコキュート、太陽光発電装置の有無にあわせてOn/Offを選択してください。</p>
+	</div><!-- div class="content" -->
+	</div><!-- div class="wrapper" -->
+
+	<div class="tsuikakairo">
+  	</div><!-- div class="images" -->
+
+
+
+    <h2 id="09">分電盤の回路数</h2>
+    <div class="wrapper">
+	<div class="content">
+	<p>ご利用の環境に合った分電盤の回路数を選択してください。<br />
+     16回路から40回路まで、4回路ごとに選べます。</p>
+	</div><!-- div class="content" -->
+	</div><!-- div class="wrapper" -->
+
+	<div class="bunden">
+  	</div><!-- div class="images" -->
+
+
+
+    <h2 id="10">回路の名称設定</h2>
+    <div class="wrapper">
+	<div class="content">
+	<p>回路ごとに名称を設定できます。
+	室名など、分かりやすい名前を入力してください。<br />
+	回路の名称を設定することにより、<a href="constitution.html" target="_blank">構成ページ</a>で回路ごとの数値を確認することができます。
+ 	</p>
+	</div><!-- div class="content" -->
+	</div><!-- div class="wrapper" -->
+
+	<div class="kairo-name">
+  	</div><!-- div class="images" -->
+
+
+    <div class="wrapper">
+	<div class="content">
+	<p>ページ下部にある青い「保存する」ボタンをタップしてください。<br />
+	これにより、設定した回路の名称がサーバーへ保存され、他のデバイスからも簡単に読み込めます。</p>
+	</div><!-- div class="content" -->
+	</div><!-- div class="wrapper" -->
+
+	<div class="setting-button">
+  	</div><!-- div class="images" -->
+
+
+
+<h1 id="11">初期設定について(消費電力目標値)</h1>
+	<div class="wrapper">
+	<div class="content">
+	<p>在宅ネットワークでViewEを起動します。(現在開いている画面です）<br>
+	在宅ネットワークのViewEで設定ページを開き、サブメニューから「<a href="setting_target.html" target="_blank">消費目標値設定</a>」を選び各種設定を行います。</p>
+	</div><!-- div class="content" -->
+	</div><!-- div class="wrapper" -->
+
+	<div class="target">
+	</div><!-- div class="images" -->
+
+
+<h2 id="12">1日あたりの目標消費電力(kWh)</h2>
+    <div class="wrapper">
+	<div class="content">
+	<p>一日あたりの目標消費電力(kWh)を入力すると、その達成度がメインページに表示されます。
+	アイコンの表示は以下の通りです。</p>
+
+    <h3>目標値に対する使用電力量</h3>
+	～70％・・・「いいかんじ」<img src="images/denkyu1-0.png" width="24" height="40" align="absmiddle" /><br />
+	71％～90％・・・「ちょっと多い」<img src="images/denkyu2-0.png" width="24" height="40" align="absmiddle" /><br />
+	91％～100％・・・「多い」<img src="images/denkyu3-0.png" width="24" height="40" align="absmiddle" /><br />
+	101％～　・・・「すごく多い」<img src="images/denkyu4-0.png" width="24" height="40" align="absmiddle" />
+	</div><!-- div class="content" -->
+	</div><!-- div class="wrapper" -->
+
+	<div class="mokuhyo">
+  	</div><!-- div class="images" -->
+
+
+    <h2 id="13">1kWhあたりの電気料金(円)</h2>
+    <div class="wrapper">
+	<div class="content">
+	<p>ご利用の電力会社の内訳に従って、料金を入力すると、メインページの電気料金表示に反映されます。
+        金額はあくまで目安となりますので、ご了承ください。</p>
+	</div><!-- div class="content" -->
+	</div><!-- div class="wrapper" -->
+
+	<div class="yen">
+	</div><!-- div class="images" -->
+
+
+   <h2 id="14">時間帯入力</h2>
+    <div class="wrapper">
+	<div class="content">
+	<p>1kWhあたりの電気料金で設定した金額をどの時間から開始するかを設定できます。</p>
+    <p>例） 昼間：9 時～ 17 時<br />
+　　朝晩：7 時～ 9 時・17 時～ 23 時<br />
+　　夜間：23 時～ 7 時となります。</p>
+	</div><!-- div class="content" -->
+	</div><!-- div class="wrapper" -->
+
+	<div class="time">
+	</div><!-- div class="images" -->
+
+
+
+
+<h1 id="01">各画面について</h1>
+<h2 id="02">メイン</h2>
+	<div class="wrapper">
+	<div class="content">
+	<p>今日の消費電力、電気料金が簡潔に表示されます。</p>
+	<p>中央には、目標値に対するパーセンテージが表示され、
+	その値によってViewEくんのアイコンが4段階に変化します。</p>
+	</div><!-- div class="content" -->
+	</div><!-- div class="wrapper" -->
+
+	<div class="main">
+	</div>
+    <!-- div class="images" -->
+
+
+        <h3>目標値に対する使用電力量</h3>
+        <div class="wrapper">
+		<div class="content">
+		～70％・・・「いいかんじ」
+    <img src="images/denkyu1-0.png" alt="" width="24" height="40" align="absmiddle" />
+	<br />
+	71％～90％・・・「ちょっと多い」
+    <img src="images/denkyu2-0.png" alt="" width="24" height="40" align="absmiddle" />
+    <br />
+	91％～100％・・・「多い」
+    <img src="images/denkyu3-0.png" alt="" width="24" height="40" align="absmiddle" />
+    <br />
+	101％～　・・・「すごく多い」
+    <img src="images/denkyu4-0.png" alt="" width="24" height="40" align="absmiddle" /><br />
+	<p>その日の消費電力と太陽光発電量の、30分ごとの推移も
+    グラフで見ることができます。</p>
+		</div><!-- div class="content" -->
+		</div><!-- div class="wrapper" -->
+
+		<div class="images">
+		<p>&nbsp; </p>
+		</div><!-- div class="images" -->
+
+
+
+        <h3>円グラフのみかた</h3>
+        <div class="wrapper">
+		<div class="content">
+		<strong>
+       	<p>今日どれくらい電気を使ったかがひとめでわかります。</p>
+       </strong>
+<p>設定の中の消費電力目標値の「一日あたりの目標消費電力[kWh]」に入力された数値目標に対して、当日の合計がどの程度使用しているかを％とドーナッツグラフの割合で表示します。</p>
+<p>例）<br />
+目標値を24kWhに設定した場合、今日の合計消費電力が12kWhだった場合は「目標値の50%使っています」と表示され、ViewEくんの顔色は「いいかんじ」となります。</p>
+
+		</div><!-- div class="content" -->
+		</div><!-- div class="wrapper" -->
+
+		<div class="engraph">
+	  	</div><!-- div class="images" -->
+
+
+
+
+	<h2 id="03">消費電力</h2>
+
+    	<div class="wrapper">
+	<div class="content">
+	<p>今日はもちろん、過去の消費電力を見ることができ、
+	さらに設定した日付で比較をすることもできます。</p>
+
+	</div><!-- div class="content" -->
+	</div><!-- div class="wrapper" -->
+
+	<div class="power">
+	</div><!-- div class="images" -->
+
+
+<h3>比較する</h3>
+		<div class="wrapper">
+		<div class="content">
+	<p>「比較する」をオンにすると、過去のグラフが表示され、消費量を比較することができます。表示単位(年/月/日)の切り替えは、下方のボタンで行えます。</p>
+		</div><!-- div class="content" -->
+		</div><!-- div class="wrapper" -->
+
+		<div class="power-hikaku">
+		</div><!-- div class="images" --><!-- div class="images" -->
+
+
+<h3>日付を選択する</h3>
+		<div class="wrapper">
+		<div class="content">
+		<p>日付けの選択は、「簡易選択」、または「ダイレクト選択」から行います。</p></div>
+		<!-- div class="content" -->
+</div><!-- div class="wrapper" -->
+
+		<div class="power-day">
+	  	</div><!-- div class="images" -->
+
+
+    <h2 id="04">構成</h2>
+    <div class="wrapper">
+	<div class="content">
+	<p>ブレーカー毎の棒グラフが表示されます。
+消費電力画面と同様に、表示単位（年/月/日）、日付、時間の選択を行えます。</p>
+	</div><!-- div class="content" -->
+	</div><!-- div class="wrapper" -->
+
+	<div class="constitution">
+  	</div><!-- div class="images" -->
+
+
+
+    <h2 id="05">太陽光発電</h2>
+    <div class="wrapper">
+	<div class="content">
+	<p>太陽光発電量と消費量、その割合（自給率）、および売買量を、一度に確認できます。</p>
+	<p>グラフでは、 発電と消費、または売買の量が分かりやすく比較されます。
+	 ここでも、表示単位と日付けの選択が可能です。</p>
+	</div><!-- div class="content" -->
+	</div><!-- div class="wrapper" -->
+
+	<div class="solar">
+	</div><!-- div class="images" -->
+
+
+<h1 id="15">消費電力の集計データのダウンロード方法</h1>
+	<div class="wrapper">
+	<div class="content">
+	<p>設定ページの中のサブメニューから「<a href="setting_download_year.html" target="_blank">消費電力の集計データ</a>」を開きます。</p>
+	</div><!-- div class="content" -->
+	</div><!-- div class="wrapper" -->
+
+	<div class="download">
+	</div><!-- div class="images" -->
+
+<h2 id="16">年間の消費電力集計データ</h2>
+    <div class="wrapper">
+	<div class="content">
+	<p>『年間』ボタンを選択します。<br />
+    そして、集計データを取得したい年を選び、下部にある「ダウンロード」ボタンを押します。<br />
+    すると選択した年の集計データをCSVファイルでダウンロードできます。</p>
+	</div><!-- div class="content" -->
+	</div><!-- div class="wrapper" -->
+
+	<div class="dl_y">
+  	</div><!-- div class="images" -->
+
+
+    <h2 id="17">月間の消費電力集計データ</h2>
+    <div class="wrapper">
+	<div class="content">
+       <p>『月間』ボタンを選択します。<br />
+       そして、集計データを取得したい年と月を選びます。
+       期間を選択したら下部にある「ダウンロード」ボタンを押します。<br />
+       すると選択した月の集計データをCSVファイルでダウンロードできます。</p>
+	</div><!-- div class="content" -->
+	</div><!-- div class="wrapper" -->
+
+	<div class="dl_m">
+	</div><!-- div class="images" -->
+
+
+   <h2 id="18">1日の消費電力集計データ</h2>
+    <div class="wrapper">
+	<div class="content">
+       <p>『1日』ボタンを選択します。<br />
+       そして、集計データを取得したい日にちをカレンダーより選びます。
+       期間を選択したら下部にある「ダウンロード」ボタンを押します。<br />
+       すると選択した日にちの集計データをCSVファイルでダウンロードできます。</p>
+	</div><!-- div class="content" -->
+	</div><!-- div class="wrapper" -->
+
+	<div class="dl_d">
+	</div><!-- div class="images" -->
+
+
+
+<h1 id="L00">外出モードでViewEを起動する</h1>
+
+<h2 id="L01">viewe.jpへのログイン方法</h2>
+<h3>①viewe.jp を開く</h3>
+	<div class="wrapper">
+	<div class="content">
+	<p>お使いのブラウザで <a href="http://viewe.jp/" target="_blank">viewe.jp</a> を開きます。すると、画像のようなログインページが表示されます。</p>
+	</div><!-- div class="content" -->
+	</div><!-- div class="wrapper" -->
+
+	<div class="login">
+	</div><!-- div class="images" -->
+
+
+<h3>②ログインする</h3>
+	<div class="wrapper">
+	<div class="content">
+	<p>同梱資料「ViewEに関する重要な情報」に記載されたユーザーIDとパスワードを入力し、ログインしてください。<br>
+	うまくログインできない場合はユーザーIDもしくはパスワードに誤りがある可能性がありますので、お手数ですが「<a href="#L02">ユーザーIDまたはパスワードをお忘れの場合</a>」をご覧ください。</p>
+	</div><!-- div class="content" -->
+	</div><!-- div class="wrapper" -->
+
+	<div class="login_info">
+	</div><!-- div class="images" -->
+
+
+
+<h2 id="L02">ユーザーIDまたはパスワードをお忘れの場合（登録内容の変更）</h2>
+<h3>①在宅ネットワークでViewEを起動する</h3>
+	<div class="wrapper">
+	<div class="content">
+	<p>まず、在宅ネットワーク（現在開いている画面です）でViewEを起動し、<a href="setting.html" target="_blank">設定ページ</a>を開きます。</p>
+	</div><!-- div class="content" -->
+	</div><!-- div class="wrapper" -->
+
+	<div class="setting">
+	</div><!-- div class="images" -->
+
+
+<h3>②本体UUIDをコピーする</h3>
+       	<div class="wrapper">
+       	<div class="content">
+	<p>「本体UUID」に記載されている英数字の羅列をコピーします。（右横にあるコピーボタンを押すと、UUIDのコピーが完了します。）<br />
+    ※コピーボタンでうまくコピーされない場合は、表示されているUUIDをすべて選択しテキストとしてコピーしてください。(Windowsの場合はControlキー+C、Macの場合はcommandキー+Cでコピーができます。)</p>
+       	</div><!-- div class="content" -->
+       	</div><!-- div class="wrapper" -->
+
+	<div class="setting_uuid">
+	</div>
+    <!-- div class="images" -->
+
+
+<h3>③viewe.jp を開く</h3>
+	<div class="wrapper">
+	<div class="content">
+	<p>お使いのブラウザで <a href="http://viewe.jp/" target="_blank">viewe.jp</a> を開きます。すると、画像のようなログインページが表示されます。<br>
+	ページの下部に移動し、「ID／パスワードの再登録」の項目を開いてください。</p>
+	</div><!-- div class="content" -->
+	</div><!-- div class="wrapper" -->
+
+	<div class="login">
+	</div><!-- div class="images" -->
+
+
+<h3>④ID／パスワードの再登録を行います。</h3>
+	<div class="wrapper">
+	<div class="content">
+	<p>まず、UUIDの項目に ②でコピーした内容を貼り付けます。次に変更したいユーザーIDとパスワードを入力し、すべての入力が完了したら「パスワード再登録」ボタンを押すと、再登録が完了します。</p>
+    <p><font color="#fb2a2a">※UUIDが異なる場合は再登録を行えませんので、ご注意ください。</font><br>
+    <font color="#fb2a2a">※不正ログインを防ぐ為、万が一ユーザーIDとパスワードを誤って入力してもアラートが出ない仕組みとなっております。</font></p>
+	</div><!-- div class="content" -->
+	</div><!-- div class="wrapper" -->
+
+	<div class="login_pass">
+	</div><!-- div class="images" -->
+
+
+<h3>⑤ログインする</h3>
+	<div class="wrapper">
+	<div class="content">
+	<p>ページ上部に移動し、④で再登録したユーザーIDとパスワードを入力し、ログインしてください。うまくログインできない場合はユーザーIDもしくはパスワードに誤りがある可能性があります</p>
+	<p>お手数ですが「<a href="#L02">ユーザーIDまたはパスワードをお忘れの場合</a>」に戻り、①からの手順をやり直してください。</p>
+	</div><!-- div class="content" -->
+	</div><!-- div class="wrapper" -->
+
+	<div class="login">
+	</div><!-- div class="images" -->
+
+</div>
+
+</body>
+</html>

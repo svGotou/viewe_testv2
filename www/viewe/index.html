@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="content-style-type" content="text/css" />
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script type="text/javascript" src="common/js/code-check.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+	document.write('<meta name="viewport" content="width='+device_width+'">');
+	document.write('<link rel="stylesheet" href="common/css/'+code+'/common.css" type="text/css" charset="UTF-8" title="style">');
+	document.write('<link rel="stylesheet" href="common/css/'+code+'/login.css" type="text/css" charset="UTF-8" title="style">');
+	$(function() {
+		$('button.dateselect').click(function(){
+			$(this).prev('input').datepicker();
+			$(this).prev('input').datepicker("show");
+		});
+	});
+// ]]>
+</script>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<title>ログイン | ViewE</title>
+</head>
+<body>
+<div id="wrapper">
+<!--login-->
+<div id="login">
+<div class="container">
+<div class="logo">ViewE</div>
+<form id="login-form" action="setting.html">
+<div class="input-text">ユーザーID</div>
+<input type="text" />
+<div class="input-text">パスワード</div>
+<input type="text" />
+<button type="submit" id="login-submit">ログイン</button>
+<div class="center">
+<a href="password.php">パスワードを忘れた方はこちら</a>
+</div>
+</form>
+<form id="regist-form" action="new.php">
+<div class="center">
+初めてViewEを使う方は新規登録をしてください。
+</div>
+<button type="submit" id="regist-submit">新規登録</button>
+</form>
+</div>
+</div>
+<!--login-->
+<div id="catcy-copy">いつでもどこでも電力チェック</div>
+</div>
+</body>
+</html>

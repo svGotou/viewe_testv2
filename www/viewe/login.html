@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="content-style-type" content="text/css" />
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script type="text/javascript" src="common/js/code-check.js"></script>
+<script type="text/javascript" src="request.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+	document.write('<meta name="viewport" content="width='+device_width+'">');
+	document.write('<link rel="stylesheet" href="common/css/'+code+'/common.css" type="text/css" charset="UTF-8" title="style">');
+	document.write('<link rel="stylesheet" href="common/css/'+code+'/login.css" type="text/css" charset="UTF-8" title="style">');
+	$(function() {
+		$('button.dateselect').click(function(){
+			$(this).prev('input').datepicker();
+			$(this).prev('input').datepicker("show");
+		});
+	});
+// ]]>
+</script>
+<script type="text/javascript">
+window.addEventListener('load', function () {
+
+	// authentication control (login check & logout check)
+	var query = window.location.search;
+	if (query.indexOf('logout=true') !== -1) {
+		deleteToken();
+	}
+	var token = getToken();
+	if (token) {
+		window.location.href = '/content/' + token + '/main.html';
+	}
+
+	// logo
+	//document.getElementById('logo').setAttribute('src', 'common/images/' + code + '/logo.png');
+	//document.getElementById('logo').style.opacity = 1;
+
+	// display controllers
+	//document.querySelector('.show-reg-btn').addEventListener('click', showReg, false);
+	//document.querySelector('.show-login-btn').addEventListener('click', showLogin, false);
+	
+	
+	// PASS registration
+	var rbtn = document.querySelector('.pass-btn');
+	setupInputController(document.getElementById('pass-uuid'));
+	setupInputController(document.getElementById('pass-uid'));
+	setupInputController(document.getElementById('pass3'));
+	setupInputController(document.getElementById('pass4'));
+	rbtn.addEventListener('click', function () {
+		var uuid = document.getElementById('pass-uuid').value;
+		var uid = document.getElementById('pass-uid').value;
+		var pass3 = document.getElementById('pass3').value;
+		var pass4 = document.getElementById('pass4').value;
+		if (!uuid || !uid || !pass3 || !pass4) {
+			window.alert('未入力のフィールドがあります');
+			return;
+		}
+		if (pass3 !== pass4) {
+			window.alert('パスワードがマッチしません');
+			return;
+		}
+		var params = {
+			uuid: uuid,
+			uid: uid,
+			pass: pass3
+		};
+		window.request('/auth/register', 'POST', params, null, function (error, res) {
+			if (error) {
+				if (res.code === 'ER_DUP_ENTRY') {
+					alert('内容に誤りがあります');
+				}
+				return console.error(error);
+			}
+			if (res && res.message === 'OK') {
+				alert('パスワードを再登録しました');
+				//showLogin();
+			}
+		});
+
+	}, false);
+
+
+
+	// NEW registration
+	var rbtn = document.querySelector('.reg-btn');
+	setupInputController(document.getElementById('uuid'));
+	setupInputController(document.getElementById('uid'));
+	setupInputController(document.getElementById('pass1'));
+	setupInputController(document.getElementById('pass2'));
+	rbtn.addEventListener('click', function () {
+		var uuid = document.getElementById('uuid').value;
+		var uid = document.getElementById('uid').value;
+		var pass1 = document.getElementById('pass1').value;
+		var pass2 = document.getElementById('pass2').value;
+		if (!uuid || !uid || !pass1 || !pass2) {
+			window.alert('未入力のフィールドがあります');
+			return;
+		}
+		if (pass1 !== pass2) {
+			window.alert('パスワードがマッチしません');
+			return;
+		}
+		var params = {
+			uuid: uuid,
+			uid: uid,
+			pass: pass1
+		};
+		window.request('/auth/register', 'POST', params, null, function (error, res) {
+			if (error) {
+				if (res.code === 'ER_DUP_ENTRY') {
+					alert('既にユーザーIDが存在します。');
+				}
+				return console.error(error);
+			}
+			if (res && res.message === 'OK') {
+				alert('登録が完了しました');
+				//showLogin();
+			}
+		});
+
+	}, false);
+
+	// login
+	document.querySelector('.login-btn').addEventListener('click', function () {
+		var uid = document.getElementById('l-uid').value;
+		var pass = document.getElementById('l-pass').value;
+		if (!uid || !pass) {
+			window.alert('未入力のフィールドがあります');
+			return;
+		}
+		var params = {
+			uid: uid,
+			pass: pass
+		};
+		window.request('/login', 'POST', params, null, function (error, res) {
+			if (error) {
+				return console.error(error);
+			}
+			if (res && res.token) {
+				setToken(res.token);
+				window.location.href = '/content/' + res.token + '/main.html';
+			}
+		});
+	}, false);
+
+
+	// utils
+	function showReg() {
+		//document.querySelector('.login').style.display = 'none';
+		//document.querySelector('.registration').style.display = 'block';
+	}
+
+	function showLogin() {
+		//document.querySelector('.login').style.display = 'block';
+		//document.querySelector('.registration').style.display = 'none';
+	}
+
+	function setupInputController(elm) {
+		elm.addEventListener('keyup', function () {
+			// remove all spaces
+			elm.value = elm.value.replace(/( |　)/g, '');
+			// max length is 40 chars
+			if (elm.value.length > 40) {
+				elm.value = elm.value.substring(0, 40);
+			}
+		}, false);
+	}
+
+	function setToken(token) {
+		window.localStorage.setItem('token', token);
+	}
+
+	function getToken() {
+		return window.localStorage.getItem('token');
+	}
+
+	function deleteToken() {
+		window.localStorage.removeItem('token');
+	}
+
+}, false);
+
+
+	// Tab
+$ (function(){
+        $ (".content:not('li.active + .content')").hide();      
+        $("li").hover(function(){
+                $ (this).addClass("hover")
+        },
+        function(){
+                $(this).removeClass("hover")
+    }); 
+        $ ("li").click(function(){
+                $("li").removeClass("active");
+                $ (this).addClass("active");
+                $(".content:not('li.active + .content')").fadeOut();
+        $ ("li.active + .content").fadeIn();    
+        });
+});
+</script>
+
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<title>ログイン | ViewE</title>
+</head>
+<body>
+<div id="wrapper">
+<!--login-->
+<div id="login">
+<div class="container">
+<div class="logo">ViewE</div>
+
+<div id="login-form">
+<div class="input-text">ユーザーID</div>
+<input id="l-uid" type="text" placeholder="ユーザーID" />
+<div class="input-text">パスワード</div>
+<input id="l-pass" type="password" placeholder="パスワード" />
+<button id="login-submit" class="login-btn" type="submit">ログイン</button>
+<div class="center">
+
+</div>
+</div>
+
+
+<p id="caution">※ セキュリティ強化のため、ユーザーIDやパスワードが誤っている場合もエラーを表示しておりませんのでご了承ください。</p>
+
+
+
+<div class="full_content">
+<ul>
+   <li id="new" class="active">新規登録</li>
+      <div class="content">
+		<p><strong>新規ユーザー登録</strong></p>
+		<p>新規ユーザー登録を行います。
+        UUIDは在宅ネットワークでViewEを起動し、設定ページを開いてご確認ください。</p>
+			<div id="regist-form">
+			<div class="input-text">UUID</div>
+			<input type="password" id="uuid" placeholder="UUID" />
+			<div class="input-text">ユーザーID</div>
+        	<input type="text" id="uid" placeholder="ユーザーID" />
+			<div class="input-text">パスワード</div>
+			<input type="password" id="pass1" placeholder="パスワード" />
+			<div class="input-text">パスワード確認用</div>
+			<input type="password" id="pass2" placeholder="パスワード確認用" />
+			<div>
+			<button id="regist-submit" type="submit" class="reg-btn">新規登録</button>
+			</div>
+			</div>
+      </div> 
+      
+   <li id="pass">ID／パスワードの再登録</li>
+      <div class="content">
+		<p><strong>ユーザーIDまたはパスワードをお忘れの方</strong></p>
+		<p>ユーザーIDまたはパスワードの再設定を行います。
+        UUIDは在宅ネットワークでViewEを起動し、設定ページを開くと確認できます。</p>
+			<div id="regist-form">
+			<div class="input-text">UUID</div>
+			<input type="password" id="pass-uuid" placeholder="UUID" />
+			<div class="input-text">ユーザーID</div>
+			<input type="text" id="pass-uid" placeholder="ユーザーID" />
+			<div class="input-text">パスワード</div>
+			<input type="password" id="pass3" placeholder="パスワード" />
+			<div class="input-text">パスワード確認用</div>
+			<input type="password" id="pass4" placeholder="パスワード確認用" />
+			<div>
+			<button id="regist-submit" type="submit" class="pass-btn">パスワード再登録</button>
+			</div>
+			</div>
+　　　 </div>
+</ul>
+</div>
+
+
+
+
+</div>
+</div>
+
+<!--login-->
+<div id="catcy-copy">いつでもどこでも電力チェック</div>
+</div>
+</body>
+</html>

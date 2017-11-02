@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="content-style-type" content="text/css" />
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/ui-lightness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script type="text/javascript" src="common/js/code-check.js"></script>
+<script type="text/javascript" src="request.js"></script>
+<link href="nv/build/nv.d3.css" rel="stylesheet" type="text/css">
+<link href="c3.css" rel="stylesheet" type="text/css">
+<script src="nv/build/d3.js" charset="utf-8"></script>
+<script src="nv/build/nv.d3.js"></script>
+<script src="c3.js"></script>
+<script type="text/javascript" src="js/menu.js" charset="UTF-8"></script>
+<script type="text/javascript" src="chart.js"></script>
+<script type="text/javascript" src="lang.js"></script>
+<script type="text/javascript" src="locale.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+jQuery.noConflict();
+
+// <![CDATA[
+	document.write('<meta name="viewport" content="width='+device_width+'">');
+	document.write('<link rel="stylesheet" href="common/css/'+code+'/common.css" type="text/css" charset="UTF-8" title="style">');
+	document.write('<link rel="stylesheet" href="common/css/'+code+'/power.css" type="text/css" charset="UTF-8" title="style">');
+// ]]>
+
+	$(function() {
+	  var h = $(window).height();
+
+	  $('#wrap-ld').css('display','none');
+	  $('#loader-bg ,#loader').height(h).css('display','block');
+	});
+
+	$(window).load(function () { //全ての読み込みが完了したら実行
+	  $('#loader-bg').delay(4000).fadeOut(800);
+	  $('#loader').delay(4000).fadeOut(300);
+	  $('#wrap-ld').css('display', 'block');
+});
+
+
+	$(function() {
+		$("#easyselect1-dialog").dialog({
+			autoOpen: false,
+			width: 200,
+			modal: true,
+			position: {
+				my: "center center",
+				at: "center center",
+				of: "#easyselect1-block"
+			},
+			buttons: [
+				{
+					text: '選択',
+					click: function(){
+						changeEasyDate('easyselect1-dialog');
+						$(this).dialog("close");
+					}
+				}
+			]
+		});
+		$("#easyselect2-dialog").dialog({
+			autoOpen: false,
+			width: 200,
+			modal: true,
+			position: {
+				my: "center center",
+				at: "center center",
+				of: "#easyselect2-block"
+			},
+			buttons: [
+				{
+					text: '選択',
+					click: function(){
+						setEasyCompare('easyselect2-dialog');
+						 $(this).dialog("close");
+					}
+				}
+			]
+		});
+		$('button.dateselect1').click(function(){
+			window.setupCalendar($(this), changeDate);
+		});
+		$('button.dateselect2').click(function(){
+			window.setupCalendar($(this), setCompare);
+		});
+		$(".easyselect").click(function(){
+			$('#'+$(this).attr('id')+'-dialog').dialog("open");
+		});
+	});
+
+</script>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<title>消費電力 | ViewE</title>
+</head>
+<body>
+<div id="wrapper">
+<!--header-->
+<div id="header">
+<div class="container">
+<a href="main.html"><img src="common/images/pc/logo.png" alt="ViewE" id="logo"></a>
+<div id="header-navi">
+<a href="manual.html" id="header-manual">操作説明</a>
+<a href="setting.html" id="header-setting">設定</a>
+</div>
+<div id="header-user"></div>
+
+<div class="gblnv_box">
+<div class="btn_hamburger">
+    <a href="#" class="menu-trigger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </a></div>
+<p id="menu_text">メニュー</p>
+<div class="gblnv_block">
+<nav>
+		<ul class="gblnv_list">
+			<li id="menu_01"><a href="main.html">メイン</a></li>
+			<li id="menu_02"><a href="power.html">消費電力</a></li>
+			<li id="menu_03"><a href="constitution.html">構成</a></li>
+			<li class="solar-tab" id="menu_04"><a href="solar-power.html">太陽光発電</a></li>
+			<li class="battery-tab" id="menu_05"><a href="battery.html">蓄電池</a></li>
+			<li id="menu_06"><a href="setting.html">設定</a></li>
+			<li id="menu_07"><a href="manual.html">操作説明</a></li>
+		</ul>
+</nav>
+</div>
+	</div>
+</div>
+</div>
+<div id="navi">
+<div class="container">
+<ul>
+<li><a href="main.html">メイン</a></li>
+<li><a href="power.html">消費電力</a></li>
+<li><a href="constitution.html">構成</a></li>
+<li class="solar-tab"><a href="solar-power.html">太陽光発電</a></li>
+<li class="battery-tab"><a href="battery.html">蓄電池</a></li>
+<!--
+<li><a href="water.html">水道</a></li>
+<li><a href="gas.html">ガス</a></li>
+-->
+</ul>
+<div style="display: none;" id="mode-switch">
+<a href="#" id="being-in" class="active">在宅中</a>
+<a href="#" id="being-out">外出中</a>
+</div>
+</div>
+</div>
+<!--header-->
+<!--content-->
+<div id="content">
+
+<div id="loader-bg">
+  <div id="loader">
+    <img src="images/loader.gif" width="80" height="80" alt="Now Loading..." />
+    <p>Now Loading...</p>
+  </div>
+</div>
+<div class="container" id="wrap-ld">
+<!--left-block-->
+<div id="left-block">
+<div class="left-box1">
+<div class="data-text">
+<span class="date"></span><span>の消費電力</span>
+</div><div class="view">
+<div class="element total-display-label">
+１日の消費電力
+</div>
+<div class="data">
+<span style="font-size: 24px;" class="today-bought"></span><span>kWh</span>
+</div>
+</div>
+<div class="date-select">
+<div class="easy box" id="easyselect1-block">
+<div class="direct">
+<input type="hidden" />
+<button type="button" class="dateselect1">日付選択</button>
+</div>
+<div class="data date"></div>
+<div id="easyselect1-dialog" class="easyselect-dialog" title="簡易選択">
+<select>
+<option>今日</option>
+<option>昨日</option>
+<option>2日前</option>
+<option>3日前</option>
+<option>1週間前</option>
+<option>2週間前</option>
+<option>3週間前</option>
+</select>
+</div>
+<button type="button" class="easyselect" id="easyselect1"></button>
+</div>
+</div>
+</div>
+<div class="left-box2">
+<div class="comparison">
+<div class="text">
+比較する
+</div>
+<div class="switch">
+<button calss="loading"></button>
+</div>
+</div>
+<div class="date-select red">
+<div class="easy box" id="easyselect2-block">
+<div class="direct">
+<input type="hidden" />
+<button type="button" class="dateselect2">日付選択</button>
+</div>
+<div class="data comp-date">昨日</div>
+<div id="easyselect2-dialog" class="easyselect-dialog" title="簡易選択">
+<select>
+<option>昨日</option>
+<option>2日前</option>
+<option>3日前</option>
+<option>1週間前</option>
+<option>2週間前</option>
+<option>3週間前</option>
+</select>
+</div>
+<button type="button" class="easyselect" id="easyselect2"></button>
+</div>
+
+</div>
+</div>
+<div id="unit-switch">
+<div id="arrow"></div>
+<span>グラフ単位<br />切替</span>
+<a href="power.html?range=year" id="unit-year">年</a>
+<a href="power.html?range=month" id="unit-month">月</a>
+<a href="power.html?range=day" class="active" id="unit-day">日</a>
+</div>
+</div>
+<!--left-block-->
+<!--right-block-->
+<div id="right-block">
+<!--
+<div id="power-switch">
+<a href="#" id="power-consumption" class="active">消費電力グラフ</a>
+<a href="#" id="solar-power">太陽光発電グラフ</a>
+</div>
+<div id="power-graph"></div>
+-->
+<div
+        class="c3-chart graph-chart"
+        id="line"
+        type="line"
+        width="540px"
+        height="560px"
+        x-label=""
+        y-label=""
+        data-source="url:/eco_eye_{RANGE}.php?period={PERIOD}&cute=1&solar=1"
+>
+</div>
+<!--right-block-->
+</div>
+<div id="content-note">
+数値、値段はあくまで目安です。(30分毎に更新)
+</div>
+</div>
+<!--content-->
+</div>
+<script type="text/javascript" src="graph.js"></script>
+</body>
+</html>

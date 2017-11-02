@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="content-style-type" content="text/css" />
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script type="text/javascript" src="common/js/code-check.js"></script>
+<script type="text/javascript" src="request.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+	document.write('<meta name="viewport" content="width='+device_width+'charger_output">');
+	document.write('<link rel="stylesheet" href="common/css/'+code+'/common.css" type="text/css" charset="UTF-8" title="style">');
+	document.write('<link rel="stylesheet" href="common/css/'+code+'/setting.css" type="text/css" charset="UTF-8" title="style">');
+	$(function() {
+		$('button.dateselect').click(function(){
+			$(this).prev('input').datepicker();
+			$(this).prev('input').datepicker("show");
+		});
+	});
+// ]]>
+
+$('input[type=radio]').change(function() {
+    var selected = $('input[name=solar]:checked').val();
+    $('solar-power.html').hide();
+});
+
+$('input[type=radio]').change(function() {
+    var selected = $('input[name=battery]:checked').val();
+    $('battery.html').hide();
+});
+
+	$(function(){
+		$(".save-button").on("click",function() {
+		alert("保存しました");
+		return false;
+	});
+	});
+</script>
+
+<link rel="stylesheet" href="common/css/adjuster.css" />
+<style type="text/css">
+#uuid {
+		-webkit-appearance: none;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+        padding: 2px 4px;
+        font-size: 18px;
+        width: 220px;
+		height:25px;
+		background: rgba(255,255,255,0.6);
+		margin-left:10px;
+}
+#uuid-copy {
+        border-radius: 4px;
+        border: 1px solid #f2b200;
+        text-align: center;
+        margin-left: 20px;
+        padding: 4px 10px;
+        font-size: 16px;
+        box-shadow: 0 4px 0 #f2b200;
+        cursor: pointer;
+		background-color:#fede58;
+}
+#uuid-copy:active {
+        box-shadow: 0 0 0 #fff;
+        position: relative;
+        top: 4px;
+}
+
+#save-button {
+		-webkit-appearance: none;
+        border-radius: 4px;
+        border: 1px solid #f2b200;
+        text-align: center;
+        margin-left: 20px;
+        padding: 4px 10px;
+        font-size: 16px;
+        box-shadow: 0 4px 0 #f2b200;
+        cursor: pointer;
+		background-color:#fede58;
+}
+#save-button:active {
+        box-shadow: 0 0 0 #fff;
+        position: relative;
+        top: 4px;
+}
+.select-box select {
+	font-size:18px;
+	width: 250px;
+	padding-left:10px;
+	height:33px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: 1px solid #cccccc;
+	background: rgba(255,255,255,0.6);
+	-webkit-border-top-left-radius:5px;
+	-webkit-border-bottom-left-radius:5px;
+	-moz-border-radius-topleft:5px;
+	-moz-border-radius-bottomleft:5px;
+	-webkit-border-top-right-radius:5px;
+	-webkit-border-bottom-right-radius:5px;
+	-moz-border-radius-topright:5px;
+	-moz-border-radius-bottomright:5px;
+	margin-bottom:10px;
+	margin-left:10px;
+}
+.select-box label {
+	position: relative;
+}
+.select-box label:after {
+	display: block;
+	content: " ";
+	position: absolute;
+	top: 30%;
+	right: 10px;
+	width: 20px;
+	height: 20px;
+	margin-top: -8px;
+	background: url(images/arrow.png) 0 0 no-repeat;
+	background-size: 20px;
+	pointer-events: none;
+}
+}
+</style>
+
+
+
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<title>設定 | ViewE</title>
+</head>
+<body>
+<div id="wrapper">
+  <!--header-->
+<div id="header">
+  <div class="container">
+<a href="main.html"><img src="common/images/pc/logo.png" alt="ViewE" id="logo"></a>
+<div id="header-navi-set">
+<a href="manual.html" id="header-manual">操作説明</a>
+<a href="setting.html" id="header-setting">設定</a>
+</div>
+<div id="header-user"></div>
+</div>
+</div>
+<!--header-->
+<!--setting-->
+<div class="container">
+<div id="setting">
+<h1>設定</h1>
+
+
+
+<div class="inner">
+<!--設定コンテンツ-->
+
+
+<div id="container"><!--"container"を削除するとデザインが崩れます-->
+
+<a name="top" id="top"></a>
+
+
+<!--サイドメニューここから-->
+<div id="sub">
+  <ul class="sideNav">
+<li class="active"><a href="setting.html">ViewE本体</a></li>
+<li><a href="setting_target.html">消費目標値設定</a></li>
+<li><a href="setting_download_year.html">消費電力の集計データ</a></li>
+</ul>
+</div>
+<!--サイドメニューここまで-->
+
+<!--[if !IE]>メインここから<![endif]-->
+<div id="main">
+<div class="category">
+<h2>ViewE本体</h2>
+
+
+<div class="entry_body">
+<!--
+<h3>LOCAL IP ADRESS</h3>
+<p><span class="small_text">
+住宅内で接続する場合に使用します。</span></div>
+<input type="text" size="40" /></p>
+
+<h3>GROBAL IP ADRESS</h3>
+<p><span class="small_text">外出先からで接続する場合に使用します。</span></div>
+ドメイン名</div>
+<input type="text" size="40" /></div>
+</div>
+Grobal IP Adress</div>
+<input type="text" size="40" /></p>
+
+<h3>PORT(任意)</h3>
+<p><span class="small_text">外出先からアクセスする場合に使用します。別途ルーター設定でPORTの解放を行ってください。</span></div>
+<input type="text" /></span><br>
+-->
+
+
+
+
+<h3>本体UUID</h3>
+<p>
+<input id="uuid"></input>
+<span id="uuid-copy">コピー</span>
+</p>
+
+<h3>追加回路</h3>
+<p>
+<span style="display: none;" id="fm">エコキュート<input id="ecocute-on" type="radio" name="ecocute" value="on"> ON
+<input id="ecocute-off" type="radio" name="ecocute" value="off"> OFF</span>
+<!-- <br> -->
+<span id="fm">太陽光　　　<input id="solar-on" type="radio" name="solar" value="on"> ON
+<input id="solar-off" type="radio" name="solar" value="off"> OFF</span>
+<br>
+<span id="fm">蓄電池　　　<input id="battery-on" type="radio" name="battery" value="on"> ON
+<input id="battery-off" type="radio" name="battery" value="off"> OFF</span>
+
+<!--
+<p>
+追加回路 1：<select class="optional pull-down" name="option1"><option value="0">なし</option><option value="1">太陽光</option><option value="2">エコキュート</option><option value="3">蓄電池</option><option value="9">その他</option></select>
+</p>
+<p>
+追加回路 2：<select class="optional pull-down" name="option2"><option value="0">なし</option><option value="1">太陽光</option><option value="2">エコキュート</option><option value="3">蓄電池</option><option value="9">その他</option></select>
+</p>
+<p>
+追加回路 3：<select class="optional pull-down" name="option3"><option value="0">なし</option><option value="1">太陽光</option><option value="2">エコキュート</option><option value="3">蓄電池</option><option value="9">その他</option></select>
+</p>
+<p>
+追加回路 4：<select class="optional pull-down" name="option4"><option value="0">なし</option><option value="1">太陽光</option><option value="2">エコキュート</option><option value="3">蓄電池</option><option value="9">その他</option></select>
+</p>
+-->
+</p>
+
+<div class="setting_form">
+
+<h3>分電盤の回路数</h3>
+<p>
+<div class="select-box">
+<label><select id="board" name="distribution-board" class="pull-down">
+<option value="0">16回路</option>
+<option value="1">20回路</option>
+<option value="2">24回路</option>
+<option value="3">28回路</option>
+<option value="4">32回路</option>
+<option value="5">36回路</option>
+<option value="6">40回路</option>
+</select>
+</label>
+</div></p>
+
+
+
+
+<h3>チャンネル名称</h3>
+<p>
+<span id="fm">回路 1<input maxlength="12" id="ch1" type="text" /></span><br>
+<span id="fm">回路 2<input maxlength="12" id="ch2" type="text" /></span><br>
+<span id="fm">回路 3<input maxlength="12" id="ch3" type="text" /></span><br>
+<span id="fm">回路 4<input maxlength="12" id="ch4" type="text" /></span><br>
+<span id="fm">回路 5<input maxlength="12" id="ch5" type="text" /></span><br>
+<span id="fm">回路 6<input maxlength="12" id="ch6" type="text" /></span><br>
+<span id="fm">回路 7<input maxlength="12" id="ch7" type="text" /></span><br>
+<span id="fm">回路 8<input maxlength="12" id="ch8" type="text" /></span><br>
+<span id="fm">回路 9<input maxlength="12" id="ch9" type="text" /></span><br>
+<span id="fm">回路10<input maxlength="12" id="ch10" type="text" /></span><br>
+<span id="fm">回路11<input maxlength="12" id="ch11" type="text" /></span><br>
+<span id="fm">回路12<input maxlength="12" id="ch12" type="text" /></span><br>
+<span id="fm">回路13<input maxlength="12" id="ch13" type="text" /></span><br>
+<span id="fm">回路14<input maxlength="12" id="ch14" type="text" /></span><br>
+<span id="fm">回路15<input maxlength="12" id="ch15" type="text" /></span><br>
+<span id="fm">回路16<input maxlength="12" id="ch16" type="text" /></span><br>
+<span id="fm">回路17<input maxlength="12" id="ch17" type="text" /></span><br>
+<span id="fm">回路18<input maxlength="12" id="ch18" type="text" /></span><br>
+<span id="fm">回路19<input maxlength="12" id="ch19" type="text" /></span><br>
+<span id="fm">回路20<input maxlength="12" id="ch20" type="text" /></span><br>
+<span id="fm">回路21<input maxlength="12" id="ch21" type="text" /></span><br>
+<span id="fm">回路22<input maxlength="12" id="ch22" type="text" /></span><br>
+<span id="fm">回路23<input maxlength="12" id="ch23" type="text" /></span><br>
+<span id="fm">回路24<input maxlength="12" id="ch24" type="text" /></span><br>
+<span id="fm">回路25<input maxlength="12" id="ch25" type="text" /></span><br>
+<span id="fm">回路26<input maxlength="12" id="ch26" type="text" /></span><br>
+<span id="fm">回路27<input maxlength="12" id="ch27" type="text" /></span><br>
+<span id="fm">回路28<input maxlength="12" id="ch28" type="text" /></span><br>
+<span id="fm">回路29<input maxlength="12" id="ch29" type="text" /></span><br>
+<span id="fm">回路30<input maxlength="12" id="ch30" type="text" /></span><br>
+<span id="fm">回路31<input maxlength="12" id="ch31" type="text" /></span><br>
+<span id="fm">回路32<input maxlength="12" id="ch32" type="text" /></span><br>
+<span id="fm">回路33<input maxlength="12" id="ch33" type="text" /></span><br>
+<span id="fm">回路34<input maxlength="12" id="ch34" type="text" /></span><br>
+<span id="fm">回路35<input maxlength="12" id="ch35" type="text" /></span><br>
+<span id="fm">回路36<input maxlength="12" id="ch36" type="text" /></span><br>
+<span id="fm">回路37<input maxlength="12" id="ch37" type="text" /></span><br>
+<span id="fm">回路38<input maxlength="12" id="ch38" type="text" /></span><br>
+<span id="fm">回路39<input maxlength="12" id="ch39" type="text" /></span><br>
+<span id="fm">回路40<input maxlength="12" id="ch40" type="text" /></span><br>
+</p>
+
+
+
+<p>
+<span id="fm">回路の名称を　<input id="save-button" class="save-button" type="button" value="保存する" /></span>
+</p>
+
+</div>
+</div>
+</div>
+</div>
+<!--[if !IE]>メインここまで<![endif]-->
+
+
+</div><!--"container"-->
+
+
+
+<!--設定コンテンツ終了-->
+</div>
+<div id="control">
+<button id="send" class="save-button" >保存</button>
+<a href="main.html" id="back">メインページに戻る</a>
+</div>
+</div>
+</div>
+<!--setting-->
+</div>
+<script type="text/javascript" src="settings.js"></script>
+</body>
+</html>
+

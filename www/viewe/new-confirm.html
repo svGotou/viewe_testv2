@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="content-style-type" content="text/css" />
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script type="text/javascript" src="common/js/code-check.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+	document.write('<meta name="viewport" content="width='+device_width+'">');
+	document.write('<link rel="stylesheet" href="common/css/'+code+'/common.css" type="text/css" charset="UTF-8" title="style">');
+	document.write('<link rel="stylesheet" href="common/css/'+code+'/new.css" type="text/css" charset="UTF-8" title="style">');
+	$(function() {
+		$('button.dateselect').click(function(){
+			$(this).prev('input').datepicker();
+			$(this).prev('input').datepicker("show");
+		});
+	});
+// ]]>
+</script>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<title>確認画面 | ViewE</title>
+</head>
+<body>
+<div id="wrapper">
+<!--header-->
+<div id="header">
+<div class="container">
+</div>
+</div>
+<!--header-->
+<!--content-->
+<div class="container">
+<div id="new">
+<div class="arrow-left"></div>
+<div class="arrow-right"></div>
+<h1>確認画面</h1>
+<form id="regist-form" action="new-regist.html">
+ご登録内容を確認してください。<br />
+よろしければ、「上記を確認して新規登録」ボタンを押してください。<br />
+<div class="inner">
+<div class="inner-block">
+<div class="input-text">メールアドレス</div>
+<div class="input-data">*****@*****.**</div>
+</div>
+<div class="inner-block">
+<div class="input-text">ユーザーID</div>
+<div class="input-data">************</div>
+</div>
+<div class="inner-block">
+<div class="input-text">パスワード</div>
+<div class="input-data">************</div>
+</div>
+</div>
+<div class="inner-control">
+<button type="submit" id="regist-submit">上記を確認して新規登録</button>
+<a href="new.html" id="back">入力画面へ戻る</a>
+</div>
+</form>
+</div>
+</div>
+<!--content-->
+</div>
+</body>
+</html>

@@ -1,0 +1,638 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+body {
+	-webkit-text-size-adjust: none;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro";
+	font-size: 14px;
+	color: #333;
+	background-color: #FFF;
+	text-align: left;
+	line-height:1.5em;
+}
+
+
+h1{
+	position: relative;
+	padding: 1em;
+	color: #000;
+	font-size: 18px;
+	font-weight: bold;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	background: #f2b200;
+	background-image: radial-gradient(#fcbe59 20%, transparent 0), radial-gradient(#fcbe59 20%, transparent 0);
+	background-position: 0 0, 5px 5px;
+	background-size: 10px 10px;
+	margin-top: 10px;
+	margin-right: 0;
+	margin-bottom: 1.5em;
+	margin-left: 0;
+	clear:both;
+}
+ 
+h1:after{
+    position: absolute;
+    bottom: -15px;
+    left: 10%;
+    z-index: 90;
+    margin-left: -15px;
+    border-top: 15px solid #f2b200;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 0;
+    content: "";
+}
+
+
+ h2 {
+	font-size: 14px;
+	font-weight: bold;
+	background-color: #fede58;
+	border-radius: 5px;
+	padding-top: 0.5em;
+	padding-right: 0.75em;
+	padding-bottom: 0.5em;
+	padding-left: 0.75em;
+	margin-top: 20px;
+	clear:both;
+}
+
+
+ h3 {
+	font-size: 14px;
+	font-weight: bold;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	color: #000;
+	border-bottom-width: 3px;
+	border-bottom-style: dotted;
+	border-bottom-color: #CCC;
+	padding-top: 0.5em;
+	padding-bottom: 0em;
+	padding-left: 0em;
+	width: 100%;
+	clear:both;
+}
+
+ul { list-style-image: url(images/arrow_blue.gif); }
+
+li {
+	list-style-type:none;
+	margin-top:1em;
+}
+.index ul li a {
+	white-space: normal;
+	line-height: 25px;
+}
+
+
+
+table {
+	width:100%;
+	border:0;
+	cellspacing:10;
+}
+
+
+
+img.ipad {
+	width:235px;
+	height:313px;
+	margin:auto;
+}
+
+
+a:link {
+	color: #666;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #666;
+}
+a:hover {
+	text-decoration: underline;
+	color: #36C;
+}
+a:active {
+	text-decoration: none;
+	color: #36C;
+}
+
+
+
+/*レスポンシブ用*/
+
+.wrapper {
+     float: right;
+     margin: 0;
+     width: 100%;
+     margin-left: -300px;
+
+}
+ 
+.content {
+	margin-left: 300px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+ 
+.images {
+	width: 300px;
+	height: auto;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	margin-top: 0px;
+}
+
+/*操作画面*/
+.main {
+	width: 250px;
+	height: 182px;
+	background-image:url(images/main.png) ;
+	background-repeat:no-repeat;
+	margin-bottom: 10px;
+}
+.engraph{
+	width: 235px;
+	height: 235px;
+	background-image:url(images/main_graph.png) ;
+	background-repeat:no-repeat;
+	margin-bottom: 10px;
+}
+.power {
+	width: 250px;
+	height: 182px;
+	background-image:url(images/power.png);
+	background-repeat:no-repeat;
+	margin-bottom: 10px;
+}
+.power-hikaku {
+	width: 235px;
+	height: 163px;
+	background-image:url(images/power_hikaku.png);
+	background-repeat:no-repeat;
+	margin-bottom: 10px;}
+.power-day {
+	width: 250px;
+	height: 164px;
+	background-image:url(images/power_day.png);
+	background-repeat:no-repeat;
+	margin-bottom: 10px;}
+.constitution {
+	width: 250px;
+	height: 183px;
+	background-image:url(images/constitution.png);
+	background-repeat:no-repeat;
+	margin-bottom: 10px;}
+.solar {
+	width: 250px;
+	height: 182px;
+	background-image:url(images/solar.png);
+	background-repeat:no-repeat;
+	margin-bottom: 10px;}
+.setting {
+	width: 250px;
+	height: 182px;
+	background-image:url(images/setting.png);
+	background-repeat:no-repeat;
+	margin-bottom: 10px;}
+.setting_uuid {
+	width: 250px;
+	height: 182px;
+	background-image:url(images/uuid.png);
+	background-repeat:no-repeat;
+	margin-bottom: 10px;}
+.setting-button {
+	width: 250px;
+	height: 53px;
+	background-image:url(/images/sp-setting-button.png);
+	background-repeat:no-repeat;
+	margin-bottom: 10px;}
+.login {
+	width: 250px;
+	height: 182px;
+	background-image:url(images/login_input.png);
+	background-repeat:no-repeat;
+	margin-bottom: 10px;}
+.login_info {
+	width: 250px;
+	height: 182px;
+	background-image:url(images/viewe_doc.png);
+	background-repeat:no-repeat;
+	margin-bottom: 10px;}
+.login_pass {
+	width: 250px;
+	height: 182px;
+	background-image:url(images/login_pass.png);
+	background-repeat:no-repeat;
+	margin-bottom: 10px;}
+.tsuikakairo {
+	width: 250px;
+	height: 63px;
+	background-image:url(images/setting_tsuikakairo.png);
+	background-repeat:no-repeat;
+	margin-bottom: 10px;}
+.bunden {
+	width: 250px;
+	height: 60px;
+	background-image:url(images/setting_bunden.png);
+	background-repeat:no-repeat;
+	margin-bottom: 10px;}
+.kairo-name {
+	width: 250px;
+	height: 229px;
+	background-image:url(images/setting_kairo-name.png);
+	background-repeat:no-repeat;
+	margin-bottom: 10px;}
+.hontai {
+	width: 250px;
+	height: 52px;
+	background-image:url(images/setting_hontai.png);
+	background-repeat:no-repeat;
+	margin-bottom: 10px;}
+.target {
+	width: 250px;
+	height:177px;
+	background-image:url(images/setting_target.png);
+	background-repeat:no-repeat;
+	margin-bottom: 10px;}
+.mokuhyo {
+	width: 250px;
+	height:68px;
+	background-image:url(images/setting_mokuhyou.png);
+	background-repeat:no-repeat;
+	margin-bottom: 10px;}
+.yen {
+	width: 250px;
+	height:149px;
+	background-image:url(images/setting_yen.png);
+	background-repeat:no-repeat;
+	margin-bottom: 10px;}
+.time {
+	width: 250px;
+	height:198px;
+	background-image:url(images/setting_time.png);
+	background-repeat:no-repeat;
+	margin-bottom: 10px;}
+.download {
+	width: 250px;
+	height:198px;
+	background-image:url(images/setting_download.png);
+	background-repeat:no-repeat;
+	margin-bottom: 10px;}
+.dl_y {
+	width: 250px;
+	height:137px;
+	background-image:url(images/setting_dl_y.png);
+	background-repeat:no-repeat;
+	margin-bottom: 10px;}
+.dl_m {
+	width: 250px;
+	height:244px;
+	background-image:url(images/setting_dl_m.png);
+	background-repeat:no-repeat;
+	margin-bottom: 10px;}
+.dl_d {
+	width: 250px;
+	height:244px;
+	background-image:url(images/setting_dl_d.png);
+	background-repeat:no-repeat;
+	margin-bottom: 10px;}
+
+.clear {
+	clear:both;　/*floatの解除、ここがポイント*/
+}
+
+
+@media (max-width: 700px) {
+     .wrapper, .content, .images {
+          float: none;
+          margin: 0;
+          width: auto;
+     }
+body {
+	-webkit-text-size-adjust: none;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro";
+	font-size: 20px;
+	color: #333;
+	background-color: #FFF;
+	text-align: left;
+	line-height:1.5em;
+}
+h1{
+	position: relative;
+	padding: 1em;
+	color: #000;
+	font-size: 24px;
+	font-weight: bolder;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	background: #f2b200;
+	background-image: radial-gradient(#fcbe59 20%, transparent 0), radial-gradient(#fcbe59 20%, transparent 0);
+	background-position: 0 0, 5px 5px;
+	background-size: 10px 10px;
+	margin-top: 10px;
+	margin-right: 0;
+	margin-bottom: 1.5em;
+	margin-left: 0;
+	clear:both;
+}
+ h2 {
+	font-size: 24px;
+	font-weight: bold;
+	background-color: #fede58;
+	border-radius: 5px;
+	padding-top: 0.5em;
+	padding-right: 0.75em;
+	padding-bottom: 0.5em;
+	padding-left: 0.75em;
+	margin-top: 20px;
+	clear:both;
+}
+
+
+ h3 {
+	font-size: 20px;
+	font-weight: bold;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	color: #000;
+	border-bottom-width: 3px;
+	border-bottom-style: dotted;
+	border-bottom-color: #CCC;
+	padding-top: 0.5em;
+	padding-bottom: 0em;
+	padding-left: 0em;
+	width: 100%;
+	clear:both;
+}
+
+
+
+/*操作画面*/
+.main {
+	width: 250px;
+	height: 359px;
+	background-image:url(images/sp-main.png);
+	background-repeat:no-repeat;
+	display:block;
+	margin:10px auto 20px auto;
+    border:1px solid #dbd5c6;
+	margin-top:10px;
+	}
+.engraph{
+	width: 235px;
+	height: 235px;
+	background-image:url(images/main_graph.png);
+	background-repeat:no-repeat;
+	display:block;
+	margin:10px auto 20px auto;
+    border:1px solid #dbd5c6;
+	margin-top:10px;
+	}
+.power {
+	width: 250px;
+	height: 414px;
+	background-image:url(images/sp-power.png);
+	background-repeat:no-repeat;
+	display:block;
+	margin:10px auto 20px auto;
+    border:1px solid #dbd5c6;
+	margin-top:10px;
+	}
+.power-hikaku {
+	width: 235px;
+	height: 163px;
+	background-image:url(images/power_hikaku.png);
+	background-repeat:no-repeat;
+	display:block;
+	margin:10px auto 20px auto;
+    border:1px solid #dbd5c6;
+	margin-top:10px;
+	}
+.power-day {
+	width: 250px;
+	height: 186px;
+	background-image:url(images/sp-power_day.png);
+	background-repeat:no-repeat;
+	display:block;
+	margin:10px auto 20px auto;
+    border:1px solid #dbd5c6;
+	margin-top:10px;
+	}
+.constitution {
+	width: 250px;
+	height: 415px;
+	background-image:url(images/sp-constitution.png);
+	background-repeat:no-repeat;
+	display:block;
+	margin:10px auto 20px auto;
+    border:1px solid #dbd5c6;
+	margin-top:10px;
+	}
+.solar {
+	width: 250px;
+	height: 415px;
+	background-image:url(images/sp-solar.png);
+	background-repeat:no-repeat;
+	display:block;
+	margin:10px auto 20px auto;
+    border:1px solid #dbd5c6;
+	margin-top:10px;
+	}
+.setting {
+	width: 250px;
+	height: 362px;
+	background-image:url(images/sp-setting.png);
+	background-repeat:no-repeat;
+	display:block;
+	margin:10px auto 20px auto;
+    border:1px solid #dbd5c6;
+	margin-top:10px;
+	}
+.setting_uuid {
+	width: 250px;
+	height: 362px;
+	background-image:url(images/uuid.png);
+	background-repeat:no-repeat;
+	display:block;
+	margin:10px auto 20px auto;
+    border:1px solid #dbd5c6;
+	margin-top:10px;
+	}
+.setting-button {
+	width: 250px;
+	height: 140px;
+	background-image:url(/static/images/sp-setting_button.png);
+	background-repeat:no-repeat;
+	display:block;
+	margin:10px auto 20px auto;
+    border:1px solid #dbd5c6;
+	margin-top:10px;
+	}
+.login {
+	width: 250px;
+	height: 362px;
+	background-image:url(images/sp-login.png);
+	background-repeat:no-repeat;
+	display:block;
+	margin:10px auto 20px auto;
+    border:1px solid #dbd5c6;
+	margin-top:10px;
+	}
+.login_info {
+	width: 250px;
+	height: 362px;
+	background-image:url(images/viewe_doc.png);
+	background-repeat:no-repeat;
+	display:block;
+	margin:10px auto 20px auto;
+    border:1px solid #dbd5c6;
+	margin-top:10px;
+	}
+.login_pass {
+	width: 250px;
+	height: 362px;
+	background-image:url(images/sp-login_pass.png);
+	background-repeat:no-repeat;
+	display:block;
+	margin:10px auto 20px auto;
+    border:1px solid #dbd5c6;
+	margin-top:10px;
+	}
+.tsuikakairo {
+	width: 250px;
+	height: 83px;
+	background-image:url(images/sp-setting_tsuikakairo.png);
+	background-repeat:no-repeat;
+	display:block;
+	margin:10px auto 20px auto;
+    border:1px solid #dbd5c6;
+	margin-top:10px;
+	}
+.bunden {
+	width: 250px;
+	height: 73px;
+	background-image:url(images/sp-setting_bunden.png);
+	background-repeat:no-repeat;
+	display:block;
+	margin:10px auto 20px auto;
+    border:1px solid #dbd5c6;
+	margin-top:10px;
+	}
+.kairo-name {
+	width: 250px;
+	height: 229px;
+	background-image:url(images/sp-setting_kairo-name.png);
+	background-repeat:no-repeat;
+	display:block;
+	margin:10px auto 20px auto;
+    border:1px solid #dbd5c6;
+	margin-top:10px;
+	}
+.hontai {
+	width: 250px;
+	height: 37px;
+	background-image:url(images/sp-setting_hontai.png);
+	background-repeat:no-repeat;
+	display:block;
+	margin:10px auto 20px auto;
+    border:1px solid #dbd5c6;
+	margin-top:10px;
+	}
+.target {
+	width: 250px;
+	height:360px;
+	background-image:url(images/sp-setting_target.png);
+	background-repeat:no-repeat;
+	display:block;
+	margin:10px auto 20px auto;
+    border:1px solid #dbd5c6;
+	margin-top:10px;
+	}
+.mokuhyo {
+	width: 250px;
+	height:68px;
+	background-image:url(images/sp-setting_mokuhyou.png);
+	background-repeat:no-repeat;
+	display:block;
+	margin:10px auto 20px auto;
+    border:1px solid #dbd5c6;
+	margin-top:10px;
+	}
+.yen {
+	width: 250px;
+	height:135px;
+	background-image:url(images/sp-setting_yen.png);
+	background-repeat:no-repeat;
+	display:block;
+	margin:10px auto 20px auto;
+    border:1px solid #dbd5c6;
+	margin-top:10px;
+	}
+.time {
+	width: 250px;
+	height:152px;
+	background-image:url(images/sp-setting_time.png);
+	background-repeat:no-repeat;
+	display:block;
+	margin:10px auto 20px auto;
+    border:1px solid #dbd5c6;
+	margin-top:10px;
+	}
+.download {
+	width: 250px;
+	height:360px;
+	background-image:url(images/sp-setting_download.png);
+	background-repeat:no-repeat;
+	display:block;
+	margin:10px auto 20px auto;
+    border:1px solid #dbd5c6;
+	margin-top:10px;
+	}
+.dl_y {
+	width: 250px;
+	height:331px;
+	background-image:url(images/sp-setting_dl_y.png);
+	background-repeat:no-repeat;
+	display:block;
+	margin:10px auto 20px auto;
+    border:1px solid #dbd5c6;
+	margin-top:10px;
+	}
+.dl_m {
+	width: 250px;
+	height:316px;
+	background-image:url(images/sp-setting_dl_m.png);
+	background-repeat:no-repeat;
+	display:block;
+	margin:10px auto 20px auto;
+    border:1px solid #dbd5c6;
+	margin-top:10px;
+	}
+.dl_d {
+	width: 250px;
+	height:235px;
+	background-image:url(images/sp-setting_dl_d.png);
+	display:block;
+	margin:10px auto 20px auto;
+    border:1px solid #dbd5c6;
+	margin-top:10px;
+	}
+
+}
